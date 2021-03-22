@@ -1,4 +1,4 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-fils',
@@ -6,8 +6,9 @@ import { Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./fils.component.css']
 })
 export class FilsComponent implements OnInit {
+  couleur = 'rgb(185, 88, 88)';
   @Input()
-  couleur: string | undefined;
+  @Output() sendColor = new EventEmitter();
 
 
   constructor() { }
@@ -15,6 +16,8 @@ export class FilsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+sendColorToFather() {
+this.sendColor.emit(this.couleur)
+}
 
 }

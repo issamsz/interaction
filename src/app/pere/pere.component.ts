@@ -6,11 +6,13 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./pere.component.css']
 })
 export class PereComponent implements OnInit {
-  color = 'rgb(202, 44, 123)';
+  color: string | undefined;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
+  treat(font: any){
+  this.color = font;
+  }
 }

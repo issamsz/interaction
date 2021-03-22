@@ -1,6 +1,6 @@
-<div [style.background-color]="color"  class="pere">
+<div [style.background-color]= 'color'  class="pere">
 <h2 >font de couleur pére</h2>
-<app-fils [couleur] = "color"></app-fils>
+<app-fils (sendColor)="treat($event)" ></app-fils>
 </div>
 
 
